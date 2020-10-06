@@ -16,6 +16,8 @@ export default function App() {
       <Field label="Enter English" onChange={setText} value={text} />
       <Languages language={language} onLanguageChange={setLanguage} />
       <hr />
+
+      <h1>Translated Phrase</h1>
       <Translate text={text} language={language} />
     </div>
   );
