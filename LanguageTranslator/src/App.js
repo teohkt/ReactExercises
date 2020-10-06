@@ -11,7 +11,7 @@ export default function App() {
 
   return (
     <div>
-      <h1 className="title">Hi there!</h1>
+      <h1 className="title">Hi there! This is a Language Translator App</h1>
 
       <Field label="Enter English" onChange={setText} value={text} />
       <Languages language={language} onLanguageChange={setLanguage} />
