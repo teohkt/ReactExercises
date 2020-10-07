@@ -1,63 +1,43 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import faker from 'faker';
+import faker from 'faker'
 
-function date() {
-    return "date"
-}
+import CommentDetail from './CommentDetail'
+import ApprovalCard from './ApprovalCard'
+
 
 const App = () => {
     return (
-        <div className="ui container comments">
-            <div className="comment">
-                <a href="/" className="avatar">
-                    <img alt="avatar" src={faker.image.avatar()} />
-                </a>
-                <div className="content">
-                    <a href="/" className = "Author">
-                        Sam
-                    </a>
-                    <div className="metadata">
-                        <span className="date">{date()}</span>
-                    </div>
-                    <div className="text">
-                        Nice Blog Post!
-                    </div>
-                </div>
-            </div>
-            <div className="comment">
-                <a href="/" className="avatar">
-                    <img alt="avatar" src={faker.image.avatar()} />
-                </a>
-                <div className="content">
-                    <a href="/" className = "Author">
-                        Sam
-                    </a>
-                    <div className="metadata">
-                        <span className="date">{date()}</span>
-                    </div>
-                    <div className="text">
-                        Nice Blog Post!
-                    </div>
-                </div>
-            </div>
 
-            <div className="comment">
-                <a href="/" className="avatar">
-                    <img alt="avatar" src={faker.image.avatar()} />
-                </a>
-                <div className="content">
-                    <a href="/" className = "Author">
-                        Sam
-                    </a>
-                    <div className="metadata">
-                        <span className="date">{date()}</span>
-                    </div>
-                    <div className="text">
-                        Nice Blog Post!
-                    </div>
-                </div>
-            </div>
+            
+
+        <div className="ui container comments">
+            <ApprovalCard>
+                <CommentDetail 
+                author="Sam" 
+                timeAgo="Today at 4:45PM" 
+                text="haha"
+                avatar={faker.image.avatar()} 
+                />
+            </ApprovalCard>
+            <ApprovalCard>
+                <CommentDetail 
+                author="Alex" 
+                timeAgo="Today at 3:33PM" 
+                text="huh"
+                avatar={faker.image.avatar()} 
+                />
+            </ApprovalCard>
+            <ApprovalCard>
+                <CommentDetail 
+                author="Jane" 
+                timeAgo="Months ago" 
+                text="lamo"
+                avatar={faker.image.avatar()} 
+                />  
+            </ApprovalCard>
+
+
 
         </div>
     );
