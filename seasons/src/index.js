@@ -1,9 +1,8 @@
-import './index.css'
-
 import React from 'react';
 import ReactDOM from 'react-dom';
 
 import SeasonDisplay from './SeasonDisplay'
+import LoadingSpinner from './LoadingSpinner'
 
 class App extends React.Component {
     constructor(props) {
@@ -25,11 +24,7 @@ class App extends React.Component {
         );
     }
 
-    componentDidUpdate() {
-        console.log("my component was just updated")
-    }
-
-    render() { 
+    renderContent() {
             //Conditional Rendering
             if(this.state.errorMessage && !this.state.lat) {
                 return <div>Error: {this.state.errorMessage}</div>;
@@ -37,13 +32,15 @@ class App extends React.Component {
             if(!this.state.errorMessage && this.state.lat) {
                 return <SeasonDisplay lat={this.state.lat} />;
             }
-            return (
-                <div class="ui segment">
-                    <div class="ui active dimmer">
-                        <div class="ui text loader">Loading</div>
-                    </div>
+            return <LoadingSpinner message="Waiting for Location Permissions"/>;
+    };
+
+    render() { 
+        return (
+            <div className="font red" style={{color: "red"}}>
+                {this.renderContent()}
             </div>
-            );
+        )
     }
 };
 
