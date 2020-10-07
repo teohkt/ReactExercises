@@ -14,4 +14,5 @@ Start react server
 npm start
 
 
-If you clone repo onto a new machine, you need to use 'npm install' to get all the dependencies on that machine.
+If you clone repo onto a new machine, you need to use the following to get all the dependencies on that machine.
+npm install
