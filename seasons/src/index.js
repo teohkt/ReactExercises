@@ -9,32 +9,32 @@ class App extends React.Component {
 
         //Initializing state object as null since we do not know the number
         this.state = { lat: null, errorMessage: ''};
+    }
 
+    componentDidMount() {
         window.navigator.geolocation.getCurrentPosition(
             //Success Callback
-            (position)=> {
-                console.log(position)
-                this.setState({ lat: position.coords.latitude });
-            },
+            (position) => this.setState({ lat: position.coords.latitude }),
             //Failure Callback
-            (err)=>{
+            (err) => {
                 console.log(err)
                 this.setState({ errorMessage: err.message });
             }
         );
     }
 
-    render() {
- 
+    componentDidUpdate() {
+        console.log("my component was just updated")
+    }
+
+    render() { 
             //Conditional Rendering
             if(this.state.errorMessage && !this.state.lat) {
                 return <div>Error: {this.state.errorMessage}</div>;
             }
-
             if(!this.state.errorMessage && this.state.lat) {
-                return <div>Latitude: {this.state.lat}</div>;
+                return <SeasonDisplay lat={this.state.lat} />;
             }
-
             return <div>Loading!</div>
     }
 }
