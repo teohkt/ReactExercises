@@ -16,3 +16,7 @@ npm start
 
 If you clone repo onto a new machine, you need to use the following to get all the dependencies on that machine.
 npm install
+
+
+If a process is running on a port that is not,
+npx kill-port <port number>
