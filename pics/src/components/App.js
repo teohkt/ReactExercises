@@ -3,14 +3,21 @@ import SearchBar from './SearchBar';
 
 
 
-const App = () => {
-    return (
-        <div>
 
-        <SearchBar />
 
-        </div>
-    );
+class App extends React.Component {
+
+    onSearchSubmit(term){
+        console.log(term);
+    };
+
+    render() {
+        return (
+            <div>
+                <SearchBar whenSearch={this.onSearchSubmit}/>
+            </div>
+        );
+    };
 };
 
 export default App;
