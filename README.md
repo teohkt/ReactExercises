@@ -20,3 +20,7 @@ npm install
 
 If a process is running on a port that is not,
 npx kill-port <port number>
+
+
+Slimmed down version of create-react-app
+npx nano-react-app my-app
