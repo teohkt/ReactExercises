@@ -16,8 +16,15 @@ class SearchBar extends React.Component {
     };
 
     render() {
+        const searchbarstyle = {
+            display: "flex",
+            justifyContent: "center",
+            top:"5vh",
+            height: "120px"
+        }
+
         return (
-            <div className="ui fluid category search">
+            <div className="ui fluid category search" style={searchbarstyle}>
                 <form onSubmit={this.onFormSubmit}>
                     <div className="ui icon input">
                         <label htmlFor="prompt"></label>
