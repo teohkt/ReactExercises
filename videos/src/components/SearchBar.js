@@ -11,10 +11,16 @@ class SearchBar extends React.Component {
         
     }
 
-    onFormSubmit = event => {
+    onFormSubmit = (event) => {
         event.preventDefault();
 
         console.log(this.state);
+
+        this.props.onSearchSubmit(this.state.term);
+    };
+
+    onInputChange = (event) => {
+        this.setState({term: event.target.value})
     }
 
     render() {
@@ -22,10 +28,10 @@ class SearchBar extends React.Component {
             <div className="ui fluid category search">
                 <form onSubmit={this.onFormSubmit} >
                     <div className="ui icon input">
-                        <input className="prompt" type="text" placeholder="Search Videos"
+                        <label htmlFor="video-search"/>
+                        <input className="video-search" type="text" placeholder="Search Videos"
                             value={this.state.term}
-
-                            onChange={ e => this.setState({term: e.target.value}) }
+                            onChange={this.onInputChange}
                         />
                         <i className="search icon"></i>
                     </div>
