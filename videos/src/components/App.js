@@ -1,7 +1,9 @@
 import React from 'react';
+import { Container, Header } from 'semantic-ui-react';
 
 import SearchBar from './SearchBar';
-import youtube from '../apis/youtube'
+import youtube from '../apis/youtube';
+import VideoList from './VideoList';
 
 
 class App extends React.Component {
@@ -23,9 +25,18 @@ class App extends React.Component {
     render () {
         return (
             <div>
+                <Container>
                 <SearchBar onSearchSubmit={this.onSearchSubmit} />
+                <div className='ui grid'>
+                    <div class='ten wide column'>
+                        <h1>Single Video Player</h1>
+                    </div>
+                    <div class='six wide column'>
+                        <VideoList videos={this.state.videos} />
 
-                I have {this.state.videos.length} videos
+                    </div>
+                </div>
+                </Container>
             </div>
         )
     }
