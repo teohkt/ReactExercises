@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container, Header } from 'semantic-ui-react';
+import { Container } from 'semantic-ui-react';
 
 import SearchBar from './SearchBar';
 import youtube from '../apis/youtube';
@@ -12,6 +12,10 @@ class App extends React.Component {
         super(props);
         
         this.state = { videos:[], selectedVideo: null }
+    };
+
+    componentDidMount(){
+        this.onSearchSubmit('Ghibli');
     }
 
     onSearchSubmit = async (term) => {
@@ -20,7 +24,10 @@ class App extends React.Component {
                 q: term
             }
         });
-        this.setState({videos: response.data.items})
+        this.setState({
+            videos: response.data.items,
+            selectedVideo:response.data.items[0]
+        });
     };
 
     onVideoSelect = video => {
@@ -30,19 +37,20 @@ class App extends React.Component {
     render () {
         return (
             <div>
-                <Container>
-                <SearchBar onSearchSubmit={this.onSearchSubmit} />
-                <div className='ui grid'>
-                    <div className='ten wide column'>
-                        <h1>Single Video Player</h1>
-                        <VideoDetail video={this.state.selectedVideo} />
-                    </div>
-                    <div className='six wide column'>
-                        <VideoList videos={this.state.videos} onVideoSelect={this.onVideoSelect} />
-
+                <div className='ui container' >
+                    <SearchBar onSearchSubmit={this.onSearchSubmit} />
+                    <div className='ui grid'>
+                        <div className='ui row'>
+                            <div className='ten wide column'>
+                                {/* <h1>Single Video Player</h1> */}
+                                <VideoDetail video={this.state.selectedVideo} />
+                            </div>
+                            <div className='six wide column'>
+                                <VideoList videos={this.state.videos} onVideoSelect={this.onVideoSelect} />
+                            </div>
+                        </div>
                     </div>
                 </div>
-                </Container>
             </div>
         )
     }
