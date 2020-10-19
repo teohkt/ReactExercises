@@ -1,21 +1,5 @@
 import React, {useState} from 'react'
 
-// const Accordion = ({ items }) => {
-    
-//     const renderedItems = items.map( item => {
-//         return (
-//             <div>
-//                 <h1> {item.title} </h1>
-//                 <p> {item.content} </p>
-//             </div>
-//         )
-//     });
-    
-//     return (
-//         {renderedItems}
-//     )
-// }
-
 const Accordion = ({ items }) => {
 
     const [activeIndex, setActiveIndex] = useState(null);
@@ -30,8 +14,6 @@ const Accordion = ({ items }) => {
             setActiveIndex(index);
         }
     };
-
-    
 
     const renderedItems = items.map((item, index) => {
         const active = index === activeIndex ? 'active' : '';
@@ -59,7 +41,5 @@ const Accordion = ({ items }) => {
         </div>
     );
 };
-
-
 
 export default Accordion;
