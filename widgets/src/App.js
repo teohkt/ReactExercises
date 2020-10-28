@@ -39,8 +39,8 @@ const options = [
 
 export default () => {
 
-  const [selected, setSelected] = useState(options[0]);
-  const [showDropdown, setShowDropdown] = useState(true);
+  // const [selected, setSelected] = useState(options[0]);
+  // const [showDropdown, setShowDropdown] = useState(true);
 
   return (
     <div>
@@ -58,6 +58,6 @@ export default () => {
       <Translate />
 
     </div>
-  )
+  );
 
-}
+};
