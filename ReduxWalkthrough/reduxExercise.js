@@ -1,6 +1,7 @@
-// all code done on codepen where redux dependency was already installed
+// Action Creator -> Action -> dispatch      -> Reducers    -> State
+// Drop off form  -> Form   -> Form receiver -> Departments -> Compiled Department Data
 
-console.clear();
+// all code done on codepen where redux dependency was already installed
 
 console.clear();
 
@@ -49,7 +50,7 @@ const accounting = (currentMoney = 100, action) => {
     if (action.type === 'CREATE_CLAIM'){
         return currentMoney - action.payload.amountOfMoney;
     } else if (action.type === 'CREATE_POLICY'){
-        return currentMoney + action.payload.amountOfMoney;
+        return currentMoney + action.payload.amount;
     }
 
     return currentMoney;
@@ -64,3 +65,26 @@ const policies = (listOfPolicies = [], action) => {
 
     return listOfPolicies;
 };
+
+const { createStore, combineReducers } = Redux;
+
+const ourDepartments = combineReducers ({
+  accounting: accounting,
+  claimsHistory: claimsHistory,
+  policies: policies
+});
+
+const store = createStore(ourDepartments);
+
+
+// Passed on the action to the other departments
+store.dispatch(createPolicy('Alex', 20));
+store.dispatch(createPolicy('Jack', 30));
+store.dispatch(createPolicy('Ben', 40));
+
+store.dispatch(createClaim('Alex', 100));
+store.dispatch(createClaim('Alex', 50));
+
+store.dispatch(deletePolicy('Ben'));
+// get access to all the info
+console.log(store.getState());
