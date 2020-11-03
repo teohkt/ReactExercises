@@ -3,6 +3,10 @@
 Installed 
 Node
 
+axios
+redux
+react-redux
+
 
 
 Create new app within workspace
