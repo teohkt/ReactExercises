@@ -1,30 +1,45 @@
-"# ReactExercises" 
+# ReactExercises 
 
-Installed 
-Node
+## NPM used
 
-axios
-redux
-react-redux
+### Node
+Asynchronous event-driven JavaScript runtime
+
+### axios
+Promise based HTTP client for the browser and node.js. Able to download json from links.
+
+### redux
+Maintains the state of entire application into a single immutable object. New objects are created using actions and reducers
+
+### react-redux
+Official react bidning for redux
+
+### redux-thunk
+Middleware that allows you to write action creators that returns functions instead of just actions. These returned functions are automatically invoked. This was used for blogs within the action fetchUser which returned the function which searched for individual users. 
+
+### lodash 
+* ``_.memoize``: Remembers the result of the function returned, redeuces the need for constanly calling for an already known result
+* ``_.map``: iterates through array and pulls just one property
+* ``_.uniq``: finds just the unique values
 
 
-
+## Setup
 Create new app within workspace
-npx create-react-app <name of project>
-npm uninstall -g create-react-app
-rm -rf /usr/local/bin/create-react-app
+  >npx create-react-app <name of project>
+  >npm uninstall -g create-react-app
+  >rm -rf /usr/local/bin/create-react-app
 
 Start react server
-npm start
+  >npm start
 
 
 If you clone repo onto a new machine, you need to use the following to get all the dependencies on that machine.
-npm install
+  >npm install
 
 
 If a process is running on a port that is not,
-npx kill-port <port number>
+  >npx kill-port <port number>
 
 
 Slimmed down version of create-react-app
-npx nano-react-app my-app
+  >npx nano-react-app my-app
