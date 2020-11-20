@@ -4,11 +4,17 @@ import jsonPlaceholder from '../apis/jsonPlaceholder';
 
 export const fetchPostsAndUsers = () => async (dispatch, getState) => {
   await dispatch(fetchPosts());
-  const userIds = _.uniq(_.map(getState().posts, 'userId'));
 
-  userIds.forEach(id => dispatch(fetchUser(id)));
+  // The chain statement replaces these 2 lines
+  // const userIds = _.uniq(_.map(getState().posts, 'userId'));
+
+  // userIds.forEach(id => dispatch(fetchUser(id)));
 
   _.chain(getState().posts)
+    .map('userId')
+    .uniq()
+    .forEach(id => dispatch(fetchUser(id)))
+    .value()
 };
 
 
@@ -17,8 +23,6 @@ export const fetchPosts = () => async dispatch => {
 
   dispatch({ type: 'FETCH_POSTS', payload: response.data });
 };
-
-
 
 // The underscore means that it is a private function. This set allows
 // for the fetching of a repeated user once, instead of at each instance through memoize
