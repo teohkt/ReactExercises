@@ -17,6 +17,9 @@ Official react bidning for redux
 ### redux-thunk
 Middleware that allows you to write action creators that returns functions instead of just actions. These returned functions are automatically invoked. This was used for blogs within the action fetchUser which returned the function which searched for individual users. 
 
+### react-router-dom
+Used for routes
+
 ### lodash 
 * ``_.memoize``: Remembers the result of the function returned, redeuces the need for constanly calling for an already known result
 * ``_.map``: iterates through array and pulls just one property
