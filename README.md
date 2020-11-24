@@ -32,6 +32,22 @@ Create new app within workspace
   >npm uninstall -g create-react-app
   >rm -rf /usr/local/bin/create-react-app
 
+## redux-devtools-extensions
+Used for debugging redux applications. need chrome/firefox extension, plus 
+  > import { createStore, applyMiddleware, compose } from 'redux';  
+
+  >const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+  >const store = createStore(
+  >    reducers,
+  >    composeEnhancers(applyMiddleware())
+  >);
+  ReactDOM.render(
+    <Provider store={store}>
+        <App />
+    </Provider>,
+    document.getElementById('root')
+  >);
+
 Start react server
   >npm start
 
