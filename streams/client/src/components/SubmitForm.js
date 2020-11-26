@@ -1,13 +1,17 @@
 import React from "react";
 import { useForm } from "react-hook-form";
+import { connect, useDispatch } from 'react-redux';
+import { createStream } from '../actions';
 
 function SubmitForm() {
     const { register, handleSubmit, errors } = useForm({
         mode: "onBlur"
     });
+    const dispatch = useDispatch();
 
-    function onSubmit(data) {
-        console.log(data);
+    function onSubmit(formValues) {
+        console.log(formValues);
+        dispatch(createStream(formValues));
     }
 
     return (
@@ -46,4 +50,4 @@ function SubmitForm() {
     )
 }
 
-export default SubmitForm;
+export default connect()(SubmitForm);
