@@ -4,6 +4,16 @@
       "title": "League of Streams",
       "description": "The best stream ever",
       "id": 1
+    },
+    {
+      "title": "Streams of Mystery",
+      "description": "Random games every thursday",
+      "id": 2
+    },
+    {
+      "title": "Third Time The Charm",
+      "description": "Never give up!",
+      "id": 3
     }
   ]
 }
