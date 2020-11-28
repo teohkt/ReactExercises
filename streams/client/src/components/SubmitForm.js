@@ -54,4 +54,4 @@ function SubmitForm() {
     )
 }
 
-export default connect(null, { createStream })(SubmitForm);
+export default connect()(SubmitForm);
