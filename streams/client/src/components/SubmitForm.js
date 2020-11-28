@@ -10,8 +10,9 @@ function SubmitForm() {
     });
     const dispatch = useDispatch();
 
-    function onSubmit(formValues) {
+    const onSubmit = (formValues) => {
         console.log(formValues);
+        // const data = createStream(formValues);
         dispatch(createStream(formValues));
         // createStream(formValues);
     }
@@ -53,4 +54,4 @@ function SubmitForm() {
     )
 }
 
-export default connect()(SubmitForm);
+export default connect(null, { createStream })(SubmitForm);
