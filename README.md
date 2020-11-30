@@ -62,3 +62,8 @@ If a process is running on a port that is not,
 
 Slimmed down version of create-react-app
   >npx nano-react-app my-app
+
+Make sure to install json-server either with
+  >npm install -g json-server 
+or 
+  >npx json-server --watch db.json
