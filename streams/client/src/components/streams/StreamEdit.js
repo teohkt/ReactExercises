@@ -1,7 +1,7 @@
 import _ from 'lodash';
 import React from 'react';
 import { connect } from 'react-redux';
-import { fetchStream, editStream } from '../actions';
+import { fetchStream, editStream } from '../../actions';
 import StreamForm from './StreamForm';
 
 class StreamEdit extends React.Component{
@@ -14,7 +14,7 @@ class StreamEdit extends React.Component{
     };
 
     render() {
-        console.log(this.props);
+        // console.log(this.props);
         // console.log(props.match.params.id);
         if (!this.props.stream) {
             return <div>Loading..</div>

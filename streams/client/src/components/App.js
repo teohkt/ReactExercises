@@ -1,10 +1,10 @@
 import React from 'react';
 import { Router, Route } from 'react-router-dom';
-import StreamList from '../streams/StreamList';
-import StreamCreate from '../streams/StreamCreate';
-import StreamEdit from '../streams/StreamEdit';
-import StreamDelete from '../streams/StreamDelete';
-import StreamShow from '../streams/StreamShow';
+import StreamList from '../components/streams/StreamList';
+import StreamCreate from '../components/streams/StreamCreate';
+import StreamEdit from '../components/streams/StreamEdit';
+import StreamDelete from '../components/streams/StreamDelete';
+import StreamShow from '../components/streams/StreamShow';
 
 import Header from './Header';
 import history from '../history';
