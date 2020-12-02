@@ -1,5 +1,5 @@
 import React from 'react';
-import { Router, Route } from 'react-router-dom';
+import { Router, Route, Switch } from 'react-router-dom';
 import StreamList from '../components/streams/StreamList';
 import StreamCreate from '../components/streams/StreamCreate';
 import StreamEdit from '../components/streams/StreamEdit';
@@ -16,11 +16,13 @@ const App = () => {
                 <div>
                     {/* Header needs to be a child of Browser router so link is within router */}
                     <Header />
-                    <Route path="/" exact component={StreamList} />
-                    <Route path="/streams/new" component={StreamCreate} />
-                    <Route path="/streams/edit/:id" component={StreamEdit} />
-                    <Route path="/streams/delete/:id" component={StreamDelete} />
-                    <Route path="/streams/show" component={StreamShow} />
+                    <Switch>
+                        <Route path="/" exact component={StreamList} />
+                        <Route path="/streams/new" exact component={StreamCreate} />
+                        <Route path="/streams/edit/:id" exact component={StreamEdit} />
+                        <Route path="/streams/delete/:id" exact component={StreamDelete} />
+                        <Route path="/streams/:id" exact component={StreamShow} />
+                    </Switch>
                 </div>
             </Router>
         </div>
