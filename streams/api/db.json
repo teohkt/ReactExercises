@@ -20,6 +20,12 @@
       "description": "test description",
       "userId": "101448943383945264460",
       "id": 5
+    },
+    {
+      "title": "My second Stream",
+      "description": "Second is SECOND",
+      "userId": "101448943383945264460",
+      "id": 6
     }
   ]
 }
